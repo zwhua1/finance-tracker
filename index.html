@@ -33,10 +33,37 @@
             font-size: 18px; color: #1a365d; margin-bottom: 15px;
             padding-bottom: 12px; border-bottom: 2px solid #e5e7eb;
         }
-        .card-content { max-height: 400px; overflow-y: auto; }
-        .card-content::-webkit-scrollbar { width: 6px; }
-        .card-content::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 10px; }
-        .card-content::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 10px; }
+        .card-content { max-height: 500px; overflow-y: auto; }
+        .day-section {
+            margin-bottom: 15px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .day-header {
+            background: #f3f4f6;
+            padding: 10px 15px;
+            font-weight: 600;
+            color: #1a365d;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .day-content {
+            padding: 10px;
+        }
+        .expense-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 10px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+        .expense-row:last-child { border-bottom: none; }
+        .expense-row.total {
+            background: #fef3c7;
+            font-weight: 700;
+            color: #991b1b;
+        }
+        .short-term { color: #be185d; font-weight: 600; }
         .total-box {
             background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
             padding: 15px; border-radius: 8px; margin-top: 15px;
@@ -85,8 +112,8 @@
             padding: 8px 10px; border-bottom: 1px solid #f0f0f0;
         }
         table tr:hover { background: #f9fafb; }
-        .short-term { background: #fce7f3; }
-        .short-term td { color: #be185d; font-weight: 600; }
+        .short-term-row { background: #fce7f3; }
+        .short-term-row td { color: #be185d; font-weight: 600; }
         @media (max-width: 768px) {
             .header h1 { font-size: 24px; }
             .main-grid { grid-template-columns: 1fr; }
@@ -101,136 +128,8 @@
             <p>完整明细录入 | 更新时间2月14日</p>
         </div>
 
-        <div class="main-grid">
-            <!-- Card 1: Expense Flow -->
-            <div class="card">
-                <h2>一、每日费用明细流水</h2>
-                <div class="card-content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>日期</th>
-                                <th>员工</th>
-                                <th>明细</th>
-                                <th>金额</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- 短期人员（1天） -->
-                            <tr class="short-term"><td>02/09</td><td>阿水</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr class="short-term"><td>02/09</td><td>阿鑫</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr class="short-term"><td>02/09</td><td>阿昊</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr class="short-term"><td>02/09</td><td>凌枫</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <!-- 长期人员（6天） - 只显示2.09一天的数据作为示例 -->
-                            <tr><td>02/09</td><td>小磊</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>阿楠</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>鹏程</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>小明</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>阿耀</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>红牛</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>阿江</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>阿喜</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>阿英</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>阿天</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>阿刚</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>小胖</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>大宝</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>飞飞</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>A6</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>A7</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>眼镜</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>山鸡</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>阿里</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>吞吞</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <tr><td>02/09</td><td>阿嫖</td><td>住宿+餐饮</td><td>$29.96</td></tr>
-                            <!-- 公共项目 -->
-                            <tr><td>02/09</td><td>公共项目</td><td>交通油费(3辆车)</td><td>$306.00</td></tr>
-                            <tr><td>02/09</td><td>公共项目</td><td>阿嫖离职补偿</td><td>$250.00</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="total-box">
-                    <span>流水总计</span>
-                    <span>$4,209.50</span>
-                </div>
-            </div>
-
-            <!-- Card 2: Fund Tracking -->
-            <div class="card">
-                <h2>二、资金往来核算</h2>
-                <div class="card-content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>日期</th>
-                                <th>金额</th>
-                                <th>说明</th>
-                                <th>备注</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>02/09</td><td>$5,000.00</td><td>首批预拨资金</td><td>吞吞个人垫资</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="total-box">
-                    <span>下发总计</span>
-                    <span>$5,000.00</span>
-                </div>
-            </div>
-
-            <!-- Card 3: Personal Summary -->
-            <div class="card">
-                <h2>三、个人费用汇总</h2>
-                <div class="card-content">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>员工</th>
-                                <th>金额</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- 短期人员 -->
-                            <tr class="short-term"><td>阿水</td><td>$29.96</td></tr>
-                            <tr class="short-term"><td>阿鑫</td><td>$29.96</td></tr>
-                            <tr class="short-term"><td>阿昊</td><td>$29.96</td></tr>
-                            <tr class="short-term"><td>凌枫</td><td>$29.96</td></tr>
-                            <!-- 长期人员 -->
-                            <tr><td>小磊</td><td>$168.26</td></tr>
-                            <tr><td>阿楠</td><td>$168.26</td></tr>
-                            <tr><td>鹏程</td><td>$168.26</td></tr>
-                            <tr><td>小明</td><td>$168.26</td></tr>
-                            <tr><td>阿嫖</td><td>$168.26</td></tr>
-                            <tr><td>阿耀</td><td>$168.26</td></tr>
-                            <tr><td>红牛</td><td>$168.26</td></tr>
-                            <tr><td>阿江</td><td>$168.26</td></tr>
-                            <tr><td>阿喜</td><td>$168.26</td></tr>
-                            <tr><td>阿英</td><td>$168.26</td></tr>
-                            <tr><td>阿天</td><td>$168.26</td></tr>
-                            <tr><td>阿刚</td><td>$168.26</td></tr>
-                            <tr><td>小胖</td><td>$168.26</td></tr>
-                            <tr><td>大宝</td><td>$168.26</td></tr>
-                            <tr><td>飞飞</td><td>$168.26</td></tr>
-                            <tr><td>A6</td><td>$168.26</td></tr>
-                            <tr><td>A7</td><td>$168.26</td></tr>
-                            <tr><td>眼镜</td><td>$168.26</td></tr>
-                            <tr><td>山鸡</td><td>$168.26</td></tr>
-                            <tr><td>阿里</td><td>$168.26</td></tr>
-                            <tr><td>吞吞</td><td>$168.26</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="total-box">
-                    <span>个人汇总总计</span>
-                    <span>$3,653.50</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Dashboard -->
         <div class="dashboard">
-            <h3>【 核心财务对账看板 - 最终数据校验 】</h3>
+            <h3>【 费用汇总看板 】</h3>
             <div class="stats-grid">
                 <div class="stat-item">
                     <div class="stat-label">住宿费</div>
@@ -253,8 +152,289 @@
                     <div class="stat-value">$4,209.50</div>
                 </div>
             </div>
-            <div class="status-box status-balanced">
-                ✅ 平账状态：金额完全吻合
+            <div class="status-box status-balanced">✅ 核算完成：金额完全吻合</div>
+        </div>
+
+        <div class="main-grid">
+            <!-- Card 1: Daily Expense Flow -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <h2>一、每日费用明细流水</h2>
+                <div class="card-content">
+                    
+                    <!-- 02月09日 -->
+                    <div class="day-section">
+                        <div class="day-header">02月09日（25人）</div>
+                        <div class="day-content">
+                            <div class="expense-row short-term"><span>阿水 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row short-term"><span>阿鑫 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row short-term"><span>阿昊 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row short-term"><span>凌枫 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>小磊 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿楠 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>鹏程 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>小明 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿耀 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>红牛 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿江 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿喜 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿英 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿天 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿刚 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>小胖 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>大宝 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>飞飞 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>A6 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>A7 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>眼镜 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>山鸡 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿里 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>吞吞 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿嫖 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>住宿费用（10间）</span><span>$400.00</span></div>
+                            <div class="expense-row"><span>阿嫖离职补偿</span><span>$250.00</span></div>
+                            <div class="expense-row total"><span>小计</span><span>$999.50</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 02月10日 -->
+                    <div class="day-section">
+                        <div class="day-header">02月10日（21人）</div>
+                        <div class="day-content">
+                            <div class="expense-row"><span>小磊 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿楠 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>鹏程 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>小明 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿耀 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>红牛 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿江 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿喜 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿英 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿天 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿刚 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>小胖 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>大宝 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>飞飞 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>A6 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>A7 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>眼镜 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>山鸡 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿里 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>吞吞 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿嫖 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>住宿费用（10间）</span><span>$400.00</span></div>
+                            <div class="expense-row total"><span>小计</span><span>$641.50</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 02月11日 -->
+                    <div class="day-section">
+                        <div class="day-header">02月11日（21人）</div>
+                        <div class="day-content">
+                            <div class="expense-row"><span>小磊 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿楠 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>鹏程 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>小明 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿耀 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>红牛 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿江 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿喜 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿英 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿天 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿刚 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>小胖 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>大宝 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>飞飞 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>A6 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>A7 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>眼镜 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>山鸡 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿里 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>吞吞 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿嫖 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>住宿费用（10间）</span><span>$400.00</span></div>
+                            <div class="expense-row total"><span>小计</span><span>$641.50</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 02月12日 -->
+                    <div class="day-section">
+                        <div class="day-header">02月12日（21人）</div>
+                        <div class="day-content">
+                            <div class="expense-row"><span>小磊 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿楠 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>鹏程 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>小明 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿耀 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>红牛 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿江 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿喜 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿英 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿天 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿刚 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>小胖 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>大宝 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>飞飞 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>A6 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>A7 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>眼镜 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>山鸡 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿里 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>吞吞 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿嫖 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>住宿费用（10间）</span><span>$400.00</span></div>
+                            <div class="expense-row total"><span>小计</span><span>$641.50</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 02月13日 -->
+                    <div class="day-section">
+                        <div class="day-header">02月13日（21人）</div>
+                        <div class="day-content">
+                            <div class="expense-row"><span>小磊 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿楠 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>鹏程 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>小明 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿耀 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>红牛 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿江 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿喜 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿英 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿天 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿刚 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>小胖 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>大宝 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>飞飞 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>A6 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>A7 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>眼镜 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>山鸡 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿里 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>吞吞 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿嫖 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>住宿费用（10间）</span><span>$400.00</span></div>
+                            <div class="expense-row total"><span>小计</span><span>$641.50</span></div>
+                        </div>
+                    </div>
+
+                    <!-- 02月14日 -->
+                    <div class="day-section">
+                        <div class="day-header">02月14日（21人）</div>
+                        <div class="day-content">
+                            <div class="expense-row"><span>小磊 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿楠 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>鹏程 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>小明 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿耀 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>红牛 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿江 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿喜 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿英 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿天 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿刚 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>小胖 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>大宝 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>飞飞 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>A6 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>A7 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>眼镜 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>山鸡 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿里 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>吞吞 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>阿嫖 - 餐饮</span><span>$11.50</span></div>
+                            <div class="expense-row"><span>住宿费用（10间）</span><span>$400.00</span></div>
+                            <div class="expense-row"><span>交通油费（3辆车）</span><span>$306.00</span></div>
+                            <div class="expense-row total"><span>小计</span><span>$947.50</span></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="total-box">
+                    <span>流水总计</span>
+                    <span>$4,209.50</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-grid">
+            <!-- Card 2: Fund Tracking -->
+            <div class="card">
+                <h2>二、资金往来核算</h2>
+                <div class="card-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>金额</th>
+                                <th>说明</th>
+                                <th>备注</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #dbeafe;">
+                                <td>02/09</td>
+                                <td style="font-weight: 600;">$5,000.00</td>
+                                <td>首批预拨资金</td>
+                                <td>吞吞个人垫资</td>
+                            </tr>
+                            <tr style="background: #fef3c7; font-weight: 700;">
+                                <td colspan="3">资金总计</td>
+                                <td style="font-weight: 700;">$5,000.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="total-box">
+                    <span>下发总计</span>
+                    <span>$5,000.00</span>
+                </div>
+            </div>
+
+            <!-- Card 3: Personal Summary -->
+            <div class="card">
+                <h2>三、个人费用汇总</h2>
+                <div class="card-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>员工</th>
+                                <th>金额</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 短期人员（1天） -->
+                            <tr class="short-term-row"><td>阿水</td><td>$11.50</td></tr>
+                            <tr class="short-term-row"><td>阿鑫</td><td>$11.50</td></tr>
+                            <tr class="short-term-row"><td>阿昊</td><td>$11.50</td></tr>
+                            <tr class="short-term-row"><td>凌枫</td><td>$11.50</td></tr>
+                            <!-- 长期人员（6天） -->
+                            <tr><td>小磊</td><td>$69.00</td></tr>
+                            <tr><td>阿楠</td><td>$69.00</td></tr>
+                            <tr><td>鹏程</td><td>$69.00</td></tr>
+                            <tr><td>小明</td><td>$69.00</td></tr>
+                            <tr><td>阿嫖</td><td>$69.00</td></tr>
+                            <tr><td>阿耀</td><td>$69.00</td></tr>
+                            <tr><td>红牛</td><td>$69.00</td></tr>
+                            <tr><td>阿江</td><td>$69.00</td></tr>
+                            <tr><td>阿喜</td><td>$69.00</td></tr>
+                            <tr><td>阿英</td><td>$69.00</td></tr>
+                            <tr><td>阿天</td><td>$69.00</td></tr>
+                            <tr><td>阿刚</td><td>$69.00</td></tr>
+                            <tr><td>小胖</td><td>$69.00</td></tr>
+                            <tr><td>大宝</td><td>$69.00</td></tr>
+                            <tr><td>飞飞</td><td>$69.00</td></tr>
+                            <tr><td>A6</td><td>$69.00</td></tr>
+                            <tr><td>A7</td><td>$69.00</td></tr>
+                            <tr><td>眼镜</td><td>$69.00</td></tr>
+                            <tr><td>山鸡</td><td>$69.00</td></tr>
+                            <tr><td>阿里</td><td>$69.00</td></tr>
+                            <tr><td>吞吞</td><td>$69.00</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="total-box">
+                    <span>个人汇总总计</span>
+                    <span>$1,253.50</span>
+                </div>
             </div>
         </div>
 
