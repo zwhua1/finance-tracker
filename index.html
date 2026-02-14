@@ -489,7 +489,7 @@
             const div = document.createElement('div');
             div.className = `employee-item ${emp.short ? 'short-term' : ''}`;
             div.innerHTML = `
-                <span class="employee-name">${emp.name} (${emp.room})</span>
+                <span class="employee-name">${emp.name}</span>
                 <span class="employee-amount">$${(employeeSummary[emp.name] || 0).toFixed(2)}</span>
             `;
             employeeList.appendChild(div);
