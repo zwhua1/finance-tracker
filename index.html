@@ -58,7 +58,6 @@
             padding-bottom: 12px; border-bottom: 2px solid #e5e7eb;
         }
 
-        /* 表格样式 */
         .table-container { overflow-x: auto; }
         table {
             width: 100%; border-collapse: collapse; font-size: 13px;
@@ -77,8 +76,6 @@
         .room-col { text-align: left; color: #666; }
         .item-col { text-align: left; color: #2563eb; font-weight: 500; }
         .total-col { font-weight: 700; color: #1a365d; background: #fef3c7; }
-        
-        /* 短期人员标记 */
         .short-term { background: #fce7f3 !important; }
         .short-term td { color: #be185d; }
         
@@ -102,13 +99,11 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
         <div class="header">
             <h1>兔子团队财务对账表</h1>
             <p>完整明细录入 | 更新时间2月14日</p>
         </div>
 
-        <!-- Dashboard -->
         <div class="dashboard">
             <h3>【 费用汇总看板 】</h3>
             <div class="stats-grid">
@@ -133,12 +128,9 @@
                     <div class="stat-value">$4,209.50</div>
                 </div>
             </div>
-            <div class="status-box status-balanced">
-                ✅ 核算完成：金额完全吻合
-            </div>
+            <div class="status-box status-balanced">✅ 核算完成：金额完全吻合</div>
         </div>
 
-        <!-- Main Table: Daily Breakdown -->
         <div class="card">
             <h2>一、每日费用明细流水（2.9 - 2.14）</h2>
             <div class="table-container">
@@ -158,7 +150,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- 短期人员 (1天) -->
                         <tr class="short-term">
                             <td class="name-col">阿水</td>
                             <td class="room-col">5512</td>
@@ -215,8 +206,6 @@
                             <td>$11.50</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
                             <td class="total-col">$11.50</td>
                         </tr>
-                        
-                        <!-- 长期人员 (6天) -->
                         <tr>
                             <td class="name-col">小磊</td>
                             <td class="room-col">7704</td>
@@ -511,8 +500,6 @@
                             <td>$11.50</td><td>$11.50</td><td>$11.50</td><td>$11.50</td><td>$11.50</td><td>-</td>
                             <td class="total-col">$57.50</td>
                         </tr>
-                        
-                        <!-- 公共项目 -->
                         <tr style="background: #fef3c7;">
                             <td class="name-col" colspan="3" style="text-align: left; font-weight: 700;">公共项目 - 交通油费</td>
                             <td>$306.00</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td>
@@ -528,7 +515,6 @@
             </div>
         </div>
 
-        <!-- Fund Tracking -->
         <div class="card">
             <h2>二、资金往来核算</h2>
             <div class="table-container">
@@ -557,7 +543,6 @@
             </div>
         </div>
 
-        <!-- Summary by Category -->
         <div class="card">
             <h2>三、支出项目核算明细</h2>
             <div class="table-container">
@@ -609,7 +594,6 @@
             </div>
         </div>
 
-        <!-- Footer -->
         <div class="footer">
             <p>报告生成时间：2026年2月14日 | 兔子团队对账系统</p>
             <p style="margin-top: 10px; font-size: 12px; color: #999;">
