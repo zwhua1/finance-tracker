@@ -97,6 +97,15 @@
         .expense-date {
             color: #64748b;
             font-size: 0.85rem;
+            min-width: 100px;
+        }
+
+        .expense-desc {
+            flex: 1;
+            color: #334155;
+            font-size: 0.9rem;
+            text-align: left;
+            padding: 0 8px;
         }
 
         .expense-amount {
@@ -444,6 +453,7 @@
             div.className = 'expense-item';
             div.innerHTML = `
                 <span class="expense-date">${exp.date} - ${exp.employee}</span>
+                <span class="expense-desc">${exp.description}</span>
                 <span class="expense-amount">$${exp.amount.toFixed(2)}</span>
             `;
             expenseList.appendChild(div);
